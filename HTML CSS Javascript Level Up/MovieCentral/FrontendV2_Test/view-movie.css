@@ -1,0 +1,62 @@
+.focus-movie{
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    margin-top: 15px;
+}
+
+.focus-movie .container{
+    width: 1200px;
+    height: 100%;
+    position: relative;
+    background-color: #3d3c44;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    overflow: hidden;
+}
+.focus-movie .container::before {
+    content: '';
+    width: 1200px;
+    height: 500px;
+    position: absolute;
+}
+
+.focus-movie .container .desc, .movie-desc{
+    position: absolute;
+    bottom: 0px;
+    height: 25%;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+.focus-movie .movie-desc {
+    display: none;
+  }
+  
+.focus-movie .container:hover .desc{
+    display: none;
+}
+  
+.focus-movie .container:hover .movie-desc {
+    display: inline;
+}
+
+.focus-movie .movie-desc .description, .container .desc .title{
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.desc, .movie-desc{
+    width: 100%;
+    padding: 20px;
+    background-color: #000000c2;
+}
+
+.focus-movie .container .desc .about{
+    font-size: 18px;
+}

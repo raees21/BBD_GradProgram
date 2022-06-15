@@ -1,2 +1,2 @@
-# BBD_GradProgram
- Java, Spring, C# &amp; .Net, SQL, Design Patterns, Security ,HTML, CSS, Javascript, Angular and Azure-AWS Cloud 
+# BBD_Grad_Program
+This repo contains the Level ups I completed during the BBD Grad Program

@@ -1,0 +1,36 @@
+﻿@using BudgetPlanner.Models
+@model Goals
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class= "table table-bordered table-striped" style = "width:100%">
+    <thead>
+        <tr>
+            <th>
+                Goal Met
+            </th>
+            <th>
+                Amount Spent
+            </th>
+            <th>
+                Goal Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td width:"30%">
+                    @Model.GoalMet
+                </td>
+                <td width:"30%">
+                    @Model.AmountSpent
+                </td>
+                <td width:"30%">
+                    @Model.GoalAmount
+                </td>
+            </tr>
+    </tbody>
+</table>
+
+

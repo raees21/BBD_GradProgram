@@ -1,0 +1,32 @@
+﻿@using BudgetPlanner.Models
+@model IEnumerable<Transactions>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class= "table table-bordered table-striped" style = "width:100%">
+    <thead>
+        <tr>
+            <th>
+                Transaction Date
+            </th>
+            <th>
+                Transaction Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td width:"30%">
+                    @obj.TransactionDate
+                </td>
+                <td width:"30%">
+                    @obj.TransactionAmount
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

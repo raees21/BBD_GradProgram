@@ -1,0 +1,37 @@
+CREATE FUNCTION ValidateBid (
+    @UserID INT,
+    @Commission FLOAT,
+    @BiddingSessionID INT
+)
+RETURNS VARCHAR(MAX) AS
+BEGIN
+	DECLARE @UserType VARCHAR(MAX), @SessionStart DATE, @SessionEnd DATE;
+
+    -- Get user type and check if is estate agent
+    SELECT @UserType = [UserType].Type FROM [User]
+    INNER JOIN UserType ON UserType.UserTypeID = [User].UserTypeID
+    WHERE [User].UserID = @UserID
+
+    IF(@UserType != 'ESTATE_AGENT')
+	BEGIN
+        RETURN 0
+	END
+
+    -- Get bid session details and check that bid has started and has not expired
+    SELECT @SessionStart = [BiddingSession].StartDate, @SessionEnd = [BiddingSession].EndDate FROM [BiddingSession] WHERE BiddingSessionID = @BiddingSessionID
+    
+    IF(GETDATE() < @SessionStart) OR (GETDATE() > @SessionEnd)
+	BEGIN
+        RETURN 0
+	END
+
+    -- Check valid commission value
+	IF(@Commission < 0.0) OR (@Commission > 1.0)
+	BEGIN
+		RETURN 0
+	END
+
+
+	RETURN 1
+END
+GO

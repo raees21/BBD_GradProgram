@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<tr>
+    <td> Select a User </td>
+    <td>
+        @Html.DropDownList("Users", (IEnumerable
+       <SelectListItem>)ViewBag.Users, "Select Users")
+    </td>
+</tr>
+<div>
+    <div class="h1 mt-5">Categories</div>
+    <ul>
+        <li>
+            Entertainment: R 100,000 (Month to date: R80,000 (80%))
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </li>
+    </ul>
+    <div class="h1  mt-5">Transactions</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>12 March 2022</td>
+                <td>Entertainment</td>
+                <td>R 20,000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

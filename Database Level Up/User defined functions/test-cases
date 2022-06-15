@@ -1,0 +1,21 @@
+DECLARE @UserID INT, @Commission FLOAT, @BiddingSessionID INT;
+
+-- Case 1
+-- User: 'Joe Doe', UserID = 1, UserType = ESTATE_AGENT
+-- Commission: 0.04 (4%)
+-- BiddingSession: ID = 1, Not expired
+--SET @UserID = 1
+--SET @Commission = 0.04
+--SET @BiddingSessionID = 1
+
+-- Case 2
+-- User: 'Joe Doe', UserID = 1, UserType = ESTATE_AGENT
+-- Commission: 1.04 (104%)
+-- BiddingSession: ID = 1, Not expired
+SET @UserID = 1
+SET @Commission = 1.04
+SET @BiddingSessionID = 1
+
+
+
+SELECT dbo.ValidateBid(@UserID, @Commission, @BiddingSessionID) AS IsValidBid

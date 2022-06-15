@@ -1,0 +1,290 @@
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.header .container {
+    width: 1200px;
+    height: 85px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.header .container .logo {
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header .container   label{
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.header .container .menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1px;
+}
+
+.header .container .menu a {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 35px;
+    transition: 150ms color ease-in-out;
+}
+.header .container .menu a svg {
+    margin-bottom: 5px;
+}
+
+.header .container .menu a:hover {
+    color:  var(--primary-color);
+}
+.header .container .menu a svg {
+    transition: 150ms fill ease-in-out;
+}
+
+.header .container .menu a:hover svg {
+    fill: var(--primary-color);
+}
+.header .container  .user-actions .signin {
+    width: 120px;
+    height: 45px;
+    background-color: #f34c55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 200ms background-color ease-in-out;
+}
+.header .container  .user-actions .signin:hover {
+    background-color: #f34c54e1;
+}
+
+
+/* mobile menu */
+@media only screen and (max-width: 1200px) {
+    .header .container {
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header .container {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .header .container {
+        width: 600px;
+    }
+    .header .container .menu {
+        display: none;
+    }
+    .header .container .user-actions {
+        display: none;
+    }
+    .header .container   label{
+        opacity: 1;
+        visibility: visible;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header .container {
+        width: 550px;
+    }
+    .header .container .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header .container {
+        width: 500px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header .container {
+        width: 450px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .header .container {
+        width: 400px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .header .container {
+        width: 350px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .header .container {
+        width: 320px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+}
+
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 30;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    transition: 200ms all;
+}
+
+.mobile-menu .menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mobile-menu .menu a {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 35px;
+}
+.mobile-menu .menu a:first-child {
+    margin-top: 0;
+}
+
+.mobile-menu .menu a svg {
+    margin-bottom: 5px;
+}
+
+.mobile-menu .menu a:hover {
+    color:  var(--primary-color);
+}
+.mobile-menu .menu a:hover svg {
+    fill: var(--primary-color);
+}
+
+.mobile-menu .head {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    padding-left: 15px;
+    padding-right: 20px;
+    justify-content: space-between;
+
+}
+.mobile-menu  .user-actions .signin {
+    width: 120px;
+    height: 45px;
+    background-color: #f34c55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 200ms background-color ease-in-out;
+    margin-bottom: 40px;
+}
+.mobile-menu  .user-actions .signin:hover {
+    background-color: #f34c54e1;
+}
+
+.mobile-menu .head label {
+    width: 32px;
+    height: 32px;
+    
+}
+
+.mobile-menu  .user-actions .delete {
+    width: 120px;
+    height: 45px;
+    background-color: #f34c55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 200ms background-color ease-in-out;
+    margin-bottom: 40px;
+}
+.mobile-menu  .user-actions .delete:hover {
+    background-color: #f34c54e1;
+}
